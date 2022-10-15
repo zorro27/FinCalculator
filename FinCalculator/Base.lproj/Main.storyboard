@@ -46,6 +46,8 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-nW-3ab">
                                 <rect key="frame" x="119" y="686" width="152" height="35"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Добавить доход"/>
                             </button>
@@ -92,7 +94,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Доходы" image="pencil.circle" catalog="system" id="pro-NL-AJL"/>
                     <connections>
-                        <outlet property="AddProfitButton" destination="hsT-nW-3ab" id="His-bW-g22"/>
+                        <outlet property="AddProfitButton" destination="hsT-nW-3ab" id="Pth-Ag-2tA"/>
                         <outlet property="BalanceLabel" destination="RqC-b0-98l" id="d5J-XN-Fyw"/>
                         <outlet property="ProfitTable" destination="Fe1-gN-bNf" id="3P1-G3-eg5"/>
                         <outlet property="ValueLabel" destination="dm9-Wa-WJ7" id="ep4-IC-6yf"/>
@@ -142,6 +144,9 @@
         <image name="list.clipboard" catalog="system" width="103" height="128"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
         <image name="scribble" catalog="system" width="128" height="117"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
