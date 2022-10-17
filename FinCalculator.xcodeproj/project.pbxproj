@@ -13,6 +13,9 @@
 		B137E26A28F7367B00564F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B137E26828F7367B00564F1E /* Main.storyboard */; };
 		B137E26C28F7367D00564F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B137E26B28F7367D00564F1E /* Assets.xcassets */; };
 		B137E26F28F7367D00564F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B137E26D28F7367D00564F1E /* LaunchScreen.storyboard */; };
+		B18F9E9D28FB2A4900799A85 /* addProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */; };
+		B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9E28FC588400799A85 /* SettingsButton.swift */; };
+		B18F9EA128FC75C000799A85 /* PresentatinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9EA028FC75C000799A85 /* PresentatinController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B137E26B28F7367D00564F1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B137E26E28F7367D00564F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B137E27028F7367D00564F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProfitViewController.swift; sourceTree = "<group>"; };
+		B18F9E9E28FC588400799A85 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		B18F9EA028FC75C000799A85 /* PresentatinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentatinController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				B137E26228F7367B00564F1E /* AppDelegate.swift */,
 				B137E26428F7367B00564F1E /* SceneDelegate.swift */,
 				B137E26628F7367B00564F1E /* ProfitController.swift */,
+				B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */,
+				B18F9E9E28FC588400799A85 /* SettingsButton.swift */,
+				B18F9EA028FC75C000799A85 /* PresentatinController.swift */,
 				B137E26828F7367B00564F1E /* Main.storyboard */,
 				B137E26B28F7367D00564F1E /* Assets.xcassets */,
 				B137E26D28F7367D00564F1E /* LaunchScreen.storyboard */,
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18F9E9D28FB2A4900799A85 /* addProfitViewController.swift in Sources */,
 				B137E26728F7367B00564F1E /* ProfitController.swift in Sources */,
+				B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */,
+				B18F9EA128FC75C000799A85 /* PresentatinController.swift in Sources */,
 				B137E26328F7367B00564F1E /* AppDelegate.swift in Sources */,
 				B137E26528F7367B00564F1E /* SceneDelegate.swift in Sources */,
 			);

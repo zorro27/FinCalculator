@@ -14,22 +14,19 @@ class ProfitController: UIViewController {
     @IBOutlet weak var ProfitTable: UITableView!
     @IBOutlet weak var AddProfitButton: UIButton!
     
-//    testTable.append("1")
-//    totalScore += 500
-//    ValueLabel.text = String(totalScore) + "руб."
-//    print (totalScore)
-//    ProfitTable.reloadData()
-    
     var testTable: [String] = []
     var totalScore: Int = 0
+    var seting = settingsProfitButton()
+    let nameButton = "Добавить доход"
+    let startValue = "0 руб."
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ProfitTable.dataSource = self
         self.ProfitTable.delegate = self
-        settingsButton(button: AddProfitButton)
+        seting.setting(button: AddProfitButton, nameButton: nameButton)
         pushButton()
-        ValueLabel.text = "0 руб."
+        ValueLabel.text = startValue
     }
 }
 
@@ -44,21 +41,36 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func settingsButton(button: UIButton) {
-        button.titleLabel?.text = "Добавить доход"
-        button.backgroundColor = .blue
-        button.alpha = 0.6
-        button.tintColor = .white
-        button.layer.cornerRadius = 10
-    }
-    
     func pushButton() {
         AddProfitButton.addTarget(self, action: #selector(addProfit), for: .touchUpInside)
     }
     @objc func addProfit() {
-        testTable.append("1")
-        totalScore += 500
-        ValueLabel.text = String(totalScore) + "руб."
+        self.view.backgroundColor = .lightGray
+        self.ProfitTable.backgroundColor = .lightGray
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "addProfitViewController") as? addProfitViewController else {return}
+        //vc.modalPresentationStyle = .custom
+        //vc.transitioningDelegate = self
+        vc.profitDelegate = self
+        present(vc, animated: true)
+    }
+    
+//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+//            return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+//        }
+}
+
+extension ProfitController: UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate {
+    
+}
+
+extension ProfitController: ProfitProtocol{
+    func add(profit: String, color: UIColor) {
+        testTable.append(profit)
+        self.view.backgroundColor = color
+        ValueLabel.text = profit + "руб."
+        
         ProfitTable.reloadData()
     }
 }
+
