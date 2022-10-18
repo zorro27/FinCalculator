@@ -14,7 +14,7 @@ class ProfitController: UIViewController {
     @IBOutlet weak var ProfitTable: UITableView!
     @IBOutlet weak var AddProfitButton: UIButton!
     
-    var testTable: [String] = []
+    var testTable: [Int] = []
     var totalScore: Int = 0
     var seting = settingsProfitButton()
     let nameButton = "Добавить доход"
@@ -26,6 +26,7 @@ class ProfitController: UIViewController {
         self.ProfitTable.delegate = self
         seting.setting(button: AddProfitButton, nameButton: nameButton)
         pushButton()
+        sumValue()
         ValueLabel.text = startValue
     }
 }
@@ -37,7 +38,8 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.ProfitTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = testTable[indexPath.row]
+        let value = String(testTable[indexPath.row])
+        cell.textLabel?.text = value
         return cell
     }
     
@@ -59,17 +61,26 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
 //            return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
 //        }
 }
+extension ProfitController{
+    func sumValue() {
+        if testTable.isEmpty {
+            ValueLabel.text = startValue
+        } else {
+            var sum = testTable.reduce(0, +)
+            ValueLabel.text = String(sum)
+        }
+    }
+}
 
 extension ProfitController: UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate {
     
 }
 
 extension ProfitController: ProfitProtocol{
-    func add(profit: String, color: UIColor) {
+    func add(profit: Int, color: UIColor) {
         testTable.append(profit)
         self.view.backgroundColor = color
-        ValueLabel.text = profit + "руб."
-        
+        sumValue()
         ProfitTable.reloadData()
     }
 }

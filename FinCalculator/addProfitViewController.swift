@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProfitProtocol {
-    func add (profit: String, color: UIColor)
+    func add (profit: Int, color: UIColor)
 }
 
 class addProfitViewController: UIViewController {
@@ -32,7 +32,7 @@ class addProfitViewController: UIViewController {
     }
     
     @objc func add() {
-        profitDelegate.add(profit: "10", color: .white)
+        profitDelegate.add(profit: 10, color: .white)
         dismiss(animated: true)
     }
 }
