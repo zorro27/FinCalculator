@@ -9,25 +9,29 @@ import UIKit
 
 class ProfitController: UIViewController {
     
-    @IBOutlet weak var BalanceLabel: UILabel!
-    @IBOutlet weak var ValueLabel: UILabel!
-    @IBOutlet weak var ProfitTable: UITableView!
-    @IBOutlet weak var AddProfitButton: UIButton!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var profitTable: UITableView!
+    @IBOutlet weak var addProfitButton: UIButton!
     
     var testTable: [Int] = []
     var totalScore: Int = 0
-    var seting = settingsProfitButton()
+    let settingButton = SettingsProfitButton()
+    let settingLabel = SettingsLabel()
+    let balance = "Текущий баланс"
     let nameButton = "Добавить доход"
     let startValue = "0 руб."
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ProfitTable.dataSource = self
-        self.ProfitTable.delegate = self
-        seting.setting(button: AddProfitButton, nameButton: nameButton)
+        self.profitTable.dataSource = self
+        self.profitTable.delegate = self
+        settingLabel.setting(label: balanceLabel, text: balance)
+        settingLabel.setting(label: valueLabel, text: startValue)
+        settingButton.setting(button: addProfitButton, alfa: 0.9)
         pushButton()
         sumValue()
-        ValueLabel.text = startValue
     }
 }
 
@@ -37,18 +41,18 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.ProfitTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = self.profitTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let value = String(testTable[indexPath.row])
         cell.textLabel?.text = value
         return cell
     }
     
     func pushButton() {
-        AddProfitButton.addTarget(self, action: #selector(addProfit), for: .touchUpInside)
+        addProfitButton.addTarget(self, action: #selector(addProfit), for: .touchUpInside)
     }
     @objc func addProfit() {
         self.view.backgroundColor = .lightGray
-        self.ProfitTable.backgroundColor = .lightGray
+        self.profitTable.backgroundColor = .lightGray
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "addProfitViewController") as? addProfitViewController else {return}
         //vc.modalPresentationStyle = .custom
@@ -64,10 +68,10 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
 extension ProfitController{
     func sumValue() {
         if testTable.isEmpty {
-            ValueLabel.text = startValue
+            valueLabel.text = startValue
         } else {
-            var sum = testTable.reduce(0, +)
-            ValueLabel.text = String(sum)
+            let sum = testTable.reduce(0, +)
+            valueLabel.text = String(sum)
         }
     }
 }
@@ -81,7 +85,7 @@ extension ProfitController: ProfitProtocol{
         testTable.append(profit)
         self.view.backgroundColor = color
         sumValue()
-        ProfitTable.reloadData()
+        profitTable.reloadData()
     }
 }
 

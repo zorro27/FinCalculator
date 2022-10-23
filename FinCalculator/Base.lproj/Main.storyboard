@@ -45,18 +45,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-vw-0Cq">
-                                <rect key="frame" x="0.0" y="179.66666666666663" width="390" height="300"/>
+                                <rect key="frame" x="0.0" y="184.66666666666663" width="390" height="300"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="3wg-1G-Wd1"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93E-vt-C2c">
-                                <rect key="frame" x="30" y="124.66666666666669" width="330" height="35"/>
+                                <rect key="frame" x="30" y="124.66666666666669" width="330" height="40"/>
                                 <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kQX-70-bA3"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gbW-ra-bca"/>
@@ -77,9 +80,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ProfitTextField" destination="3Wg-B2-Hjx" id="HVI-sQ-0qf"/>
-                        <outlet property="SumLabel" destination="DwI-4u-t0d" id="3MP-QP-q9u"/>
                         <outlet property="addProfitButton" destination="93E-vt-C2c" id="P4i-dJ-FQk"/>
+                        <outlet property="profitTextField" destination="3Wg-B2-Hjx" id="HVI-sQ-0qf"/>
+                        <outlet property="sumLabel" destination="DwI-4u-t0d" id="3MP-QP-q9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWv-6Y-5kW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,14 +110,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-nW-3ab">
-                                <rect key="frame" x="50" y="686" width="290" height="35"/>
+                                <rect key="frame" x="50" y="681" width="290" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uvM-ri-F3a"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Добавить доход"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-gN-bNf">
-                                <rect key="frame" x="0.0" y="107.33333333333331" width="390" height="538.66666666666674"/>
+                                <rect key="frame" x="0.0" y="107.33333333333331" width="390" height="533.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="mJj-23-c6s" style="IBUITableViewCellStyleDefault" id="arw-mV-hX4">
@@ -157,10 +163,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Доходы" image="pencil.circle" catalog="system" id="pro-NL-AJL"/>
                     <connections>
-                        <outlet property="AddProfitButton" destination="hsT-nW-3ab" id="Pth-Ag-2tA"/>
-                        <outlet property="BalanceLabel" destination="RqC-b0-98l" id="d5J-XN-Fyw"/>
-                        <outlet property="ProfitTable" destination="Fe1-gN-bNf" id="3P1-G3-eg5"/>
-                        <outlet property="ValueLabel" destination="dm9-Wa-WJ7" id="ep4-IC-6yf"/>
+                        <outlet property="addProfitButton" destination="hsT-nW-3ab" id="Pth-Ag-2tA"/>
+                        <outlet property="balanceLabel" destination="RqC-b0-98l" id="d5J-XN-Fyw"/>
+                        <outlet property="profitTable" destination="Fe1-gN-bNf" id="3P1-G3-eg5"/>
+                        <outlet property="valueLabel" destination="dm9-Wa-WJ7" id="ep4-IC-6yf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wf4-Cq-6pw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

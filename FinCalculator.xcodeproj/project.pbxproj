@@ -16,6 +16,8 @@
 		B18F9E9D28FB2A4900799A85 /* addProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */; };
 		B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9E28FC588400799A85 /* SettingsButton.swift */; };
 		B18F9EA128FC75C000799A85 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9EA028FC75C000799A85 /* PresentationController.swift */; };
+		B1DD94FF29059E6300A0BCAE /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD94FE29059E6300A0BCAE /* SettingsTextField.swift */; };
+		B1DD950129059FC900A0BCAE /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD950029059FC900A0BCAE /* SettingsLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProfitViewController.swift; sourceTree = "<group>"; };
 		B18F9E9E28FC588400799A85 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		B18F9EA028FC75C000799A85 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		B1DD94FE29059E6300A0BCAE /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
+		B1DD950029059FC900A0BCAE /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				B137E26628F7367B00564F1E /* ProfitController.swift */,
 				B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */,
 				B18F9E9E28FC588400799A85 /* SettingsButton.swift */,
+				B1DD950029059FC900A0BCAE /* SettingsLabel.swift */,
+				B1DD94FE29059E6300A0BCAE /* SettingsTextField.swift */,
 				B18F9EA028FC75C000799A85 /* PresentationController.swift */,
 				B137E26828F7367B00564F1E /* Main.storyboard */,
 				B137E26B28F7367D00564F1E /* Assets.xcassets */,
@@ -147,12 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DD94FF29059E6300A0BCAE /* SettingsTextField.swift in Sources */,
 				B18F9E9D28FB2A4900799A85 /* addProfitViewController.swift in Sources */,
 				B137E26728F7367B00564F1E /* ProfitController.swift in Sources */,
 				B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */,
 				B18F9EA128FC75C000799A85 /* PresentationController.swift in Sources */,
 				B137E26328F7367B00564F1E /* AppDelegate.swift in Sources */,
 				B137E26528F7367B00564F1E /* SceneDelegate.swift in Sources */,
+				B1DD950129059FC900A0BCAE /* SettingsLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

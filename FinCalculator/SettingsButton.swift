@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class settingsProfitButton {
-    func setting (button: UIButton, nameButton: String) {
-        button.titleLabel?.text = nameButton
+class SettingsProfitButton {
+    func setting (button: UIButton, alfa: Double) {
+        button.setTitle("Добавить доход", for: .normal)
         button.backgroundColor = .blue
-        button.alpha = 0.9
+        button.alpha = alfa
         button.tintColor = .white
         button.layer.cornerRadius = 12
     }
