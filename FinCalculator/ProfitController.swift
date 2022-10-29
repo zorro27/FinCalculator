@@ -32,6 +32,9 @@ class ProfitController: UIViewController {
         settingButton.setting(button: addProfitButton, alfa: 0.9)
         pushButton()
         sumValue()
+        let size = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        print(size.height)
+        print (size.width)
     }
 }
 
@@ -51,20 +54,17 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
         addProfitButton.addTarget(self, action: #selector(addProfit), for: .touchUpInside)
     }
     @objc func addProfit() {
-        self.view.backgroundColor = .lightGray
-        self.profitTable.backgroundColor = .lightGray
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "addProfitViewController") as? addProfitViewController else {return}
-        //vc.modalPresentationStyle = .custom
-        //vc.transitioningDelegate = self
+        if let sheet = vc.sheetPresentationController{
+            sheet.detents = [.medium()]
+            sheet.preferredCornerRadius = 20
+        }
         vc.profitDelegate = self
         present(vc, animated: true)
     }
-    
-//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-//            return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
-//        }
 }
+
 extension ProfitController{
     func sumValue() {
         if testTable.isEmpty {
@@ -76,10 +76,6 @@ extension ProfitController{
     }
 }
 
-extension ProfitController: UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate {
-    
-}
-
 extension ProfitController: ProfitProtocol{
     func add(profit: Int, color: UIColor) {
         testTable.append(profit)
@@ -88,4 +84,3 @@ extension ProfitController: ProfitProtocol{
         profitTable.reloadData()
     }
 }
-
