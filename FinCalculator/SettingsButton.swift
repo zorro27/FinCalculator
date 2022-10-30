@@ -9,11 +9,16 @@ import Foundation
 import UIKit
 
 class SettingsProfitButton {
-    func setting (button: UIButton, alfa: Double) {
-        button.setTitle("Добавить доход", for: .normal)
-        button.backgroundColor = .blue
+    func setting (button: UIButton, setTitle: String, backgtoundCollorButton: UIColor, subTitle: String?, alfa: Double, cornerRadius: Int) {
+        button.setTitle(setTitle, for: .normal)
+        if subTitle != nil {
+            button.configuration?.subtitle = subTitle
+        }
+        button.contentHorizontalAlignment = .center
+        button.backgroundColor = backgtoundCollorButton
         button.alpha = alfa
         button.tintColor = .white
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = CGFloat(cornerRadius)
     }
 }
+

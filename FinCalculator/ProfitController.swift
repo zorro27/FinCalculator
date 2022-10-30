@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ProfitController: UIViewController {
     
@@ -29,7 +30,7 @@ class ProfitController: UIViewController {
         self.profitTable.delegate = self
         settingLabel.setting(label: balanceLabel, text: balance)
         settingLabel.setting(label: valueLabel, text: startValue)
-        settingButton.setting(button: addProfitButton, alfa: 0.9)
+        settingButton.setting(button: addProfitButton, setTitle: nameButton, backgtoundCollorButton: .blue, subTitle: nil, alfa: 0.8, cornerRadius: 12)
         pushButton()
         sumValue()
         let size = CGSize(width: self.view.frame.width, height: self.view.frame.height)
@@ -45,8 +46,9 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.profitTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let value = String(testTable[indexPath.row])
-        cell.textLabel?.text = value
+        let value = testTable[indexPath.row]
+        let separatedNum = separatedNumber(value)
+        cell.textLabel?.text = separatedNum + ",00 руб"
         return cell
     }
     
@@ -71,16 +73,26 @@ extension ProfitController{
             valueLabel.text = startValue
         } else {
             let sum = testTable.reduce(0, +)
-            valueLabel.text = String(sum)
+            let separateNum = separatedNumber(sum)
+            valueLabel.text = String(separateNum) + ",00 руб"
         }
     }
 }
 
 extension ProfitController: ProfitProtocol{
-    func add(profit: Int, color: UIColor) {
+    func add(profit: Int) {
         testTable.append(profit)
-        self.view.backgroundColor = color
         sumValue()
         profitTable.reloadData()
+    }
+}
+
+extension ProfitController {
+    func separatedNumber(_ number: Int) -> String {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.groupingSeparator = " "
+            let str = formatter.string(from: number as NSNumber)!
+        return String(str)
     }
 }
