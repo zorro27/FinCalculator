@@ -20,11 +20,17 @@ class addProfitViewController: UIViewController {
     @IBOutlet weak var sumLabel: UILabel!
     @IBOutlet weak var areaView: UIView!
     
+    @IBAction func cleanerPassed(_ sender: Any) {
+        let text = profitTextField.text!
+        let createInt = Int(text)!
+        let total = createInt/10
+        profitTextField.text = String(total)
+    }
+               
     @IBAction func numberPressed(_ sender: UIButton) {
         addProfitButton.alpha = 0.8
         profitTextField.text = profitTextField.text! + String(sender.tag)
     }
-    
     
     let settingsButton = SettingsProfitButton()
     let settingsLabel = SettingsLabel()

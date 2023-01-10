@@ -33,19 +33,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wg-B2-Hjx">
-                                <rect key="frame" x="71.333333333333343" y="67" width="298.66666666666663" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Wg-B2-Hjx">
+                                <rect key="frame" x="85" y="57" width="285" height="43.333333333333343"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-4u-t0d">
-                                <rect key="frame" x="10" y="74" width="41.333333333333336" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="10" y="63.333333333333336" width="55" height="30.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-vw-0Cq">
-                                <rect key="frame" x="10" y="155" width="370" height="506"/>
+                                <rect key="frame" x="10" y="150.33333333333337" width="370" height="506"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mwd-Iz-ZJ3">
                                         <rect key="frame" x="5" y="5" width="360" height="496"/>
@@ -53,7 +53,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wFj-f6-eDG">
                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="118"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-5S-zNZ">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-5S-zNZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="114.66666666666667" height="118"/>
                                                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                                         <constraints>
@@ -61,9 +61,12 @@
                                                             <constraint firstAttribute="width" constant="114.66666666666667" id="bcG-9Q-Vs2"/>
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="1" subtitle="">
+                                                        <buttonConfiguration key="configuration" style="plain" title="1" subtitle="" cornerStyle="medium">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="p8a-8b-sgn"/>
                                                         </connections>
@@ -80,6 +83,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="2" titleAlignment="automatic">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="Dvo-al-njU"/>
                                                         </connections>
@@ -96,6 +102,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="3">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="Pjr-Bo-0IY"/>
                                                         </connections>
@@ -103,7 +112,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="0kd-vz-2Pr">
-                                                <rect key="frame" x="0.0" y="126" width="360" height="118"/>
+                                                <rect key="frame" x="0.0" y="125.99999999999997" width="360" height="118"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq0-jU-l7S">
                                                         <rect key="frame" x="0.0" y="0.0" width="115.33333333333333" height="118"/>
@@ -117,6 +126,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="4">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="aXS-Bb-pAa"/>
                                                         </connections>
@@ -133,6 +145,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="5">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="tzD-qT-Ai6"/>
                                                         </connections>
@@ -149,6 +164,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="6">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="TxQ-wv-Jd7"/>
                                                         </connections>
@@ -166,6 +184,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="7">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="cv2-AV-f0J"/>
                                                         </connections>
@@ -178,6 +199,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="8">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="7gY-kM-bmf"/>
                                                         </connections>
@@ -190,6 +214,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="9">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="tSc-hK-L7r"/>
                                                         </connections>
@@ -219,16 +246,25 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="0">
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="numberPressed:" destination="hPy-he-l1h" eventType="touchUpInside" id="F4Y-MX-4bh"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrc-Kb-Mgq">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrc-Kb-Mgq">
                                                         <rect key="frame" x="244.66666666666671" y="0.0" width="115.33333333333334" height="118"/>
                                                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="delete.left" catalog="system"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="cleanerPassed:" destination="hPy-he-l1h" eventType="touchUpInside" id="BLD-TA-hi1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -249,11 +285,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93E-vt-C2c">
-                                <rect key="frame" x="40" y="121" width="310" height="14"/>
+                                <rect key="frame" x="40" y="110.33333333333333" width="310" height="29.999999999999986"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" buttonSize="large"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gbW-ra-bca"/>
@@ -261,12 +297,12 @@
                         <constraints>
                             <constraint firstItem="ivD-vw-0Cq" firstAttribute="height" secondItem="bXa-Nl-U3h" secondAttribute="height" multiplier="0.6" id="8f7-Xv-3Vg"/>
                             <constraint firstItem="DwI-4u-t0d" firstAttribute="leading" secondItem="gbW-ra-bca" secondAttribute="leading" constant="10" id="9hs-ns-6x7"/>
-                            <constraint firstItem="93E-vt-C2c" firstAttribute="top" secondItem="3Wg-B2-Hjx" secondAttribute="bottom" constant="20" id="Db0-4U-qZI"/>
+                            <constraint firstItem="93E-vt-C2c" firstAttribute="top" secondItem="3Wg-B2-Hjx" secondAttribute="bottom" constant="10" id="Db0-4U-qZI"/>
                             <constraint firstItem="93E-vt-C2c" firstAttribute="centerX" secondItem="bXa-Nl-U3h" secondAttribute="centerX" id="RaB-8f-g92"/>
                             <constraint firstItem="ivD-vw-0Cq" firstAttribute="leading" secondItem="gbW-ra-bca" secondAttribute="leading" constant="10" id="Tlp-zw-eiP"/>
-                            <constraint firstItem="ivD-vw-0Cq" firstAttribute="top" secondItem="93E-vt-C2c" secondAttribute="bottom" constant="20" id="Z5u-gD-PS2"/>
+                            <constraint firstItem="ivD-vw-0Cq" firstAttribute="top" secondItem="93E-vt-C2c" secondAttribute="bottom" constant="10" id="Z5u-gD-PS2"/>
                             <constraint firstItem="3Wg-B2-Hjx" firstAttribute="leading" secondItem="DwI-4u-t0d" secondAttribute="trailing" constant="20" id="ZEC-Sl-bMf"/>
-                            <constraint firstItem="3Wg-B2-Hjx" firstAttribute="top" secondItem="gbW-ra-bca" secondAttribute="top" constant="20" id="dhp-Rj-s4a"/>
+                            <constraint firstItem="3Wg-B2-Hjx" firstAttribute="top" secondItem="gbW-ra-bca" secondAttribute="top" constant="10" id="dhp-Rj-s4a"/>
                             <constraint firstItem="93E-vt-C2c" firstAttribute="leading" secondItem="gbW-ra-bca" secondAttribute="leading" constant="40" id="fkg-aF-FXb"/>
                             <constraint firstItem="gbW-ra-bca" firstAttribute="trailing" secondItem="ivD-vw-0Cq" secondAttribute="trailing" constant="10" id="ktc-q3-VRS"/>
                             <constraint firstItem="gbW-ra-bca" firstAttribute="trailing" secondItem="93E-vt-C2c" secondAttribute="trailing" constant="40" id="l7z-y8-aUu"/>
@@ -317,7 +353,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" buttonSize="large"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-gN-bNf">
                                 <rect key="frame" x="0.0" y="107.33333333333331" width="390" height="533.66666666666674"/>

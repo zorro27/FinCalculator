@@ -33,6 +33,9 @@ class ProfitController: UIViewController {
         settingButton.setting(button: addProfitButton, setTitle: nameButton, backgtoundCollorButton: .blue, subTitle: nil, alfa: 0.8, cornerRadius: 12)
         pushButton()
         sumValue()
+        if let array = UserDefaults.standard.array(forKey: "profit") as? [Int] {
+            testTable = array
+        }
         let size = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         print(size.height)
         print (size.width)
@@ -82,8 +85,11 @@ extension ProfitController{
 extension ProfitController: ProfitProtocol{
     func add(profit: Int) {
         testTable.append(profit)
+        UserDefaults.standard.set(testTable, forKey: "profit")
+        UserDefaults.standard.synchronize()
         sumValue()
         profitTable.reloadData()
+        print(UserDefaults.standard.array(forKey: "profit"))
     }
 }
 
