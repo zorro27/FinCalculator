@@ -34,7 +34,7 @@ class addProfitViewController: UIViewController {
     
     let settingsButton = SettingsProfitButton()
     let settingsLabel = SettingsLabel()
-    let nameAddProfitButtom = "Добавить доход"
+    var nameAddProfitButtom = "Добавить доход"
     let nameLabel = "Сумма:"
     
     override func viewDidLoad() {
@@ -65,7 +65,7 @@ class addProfitViewController: UIViewController {
     @objc func add() {
         guard let text = profitTextField.text, text.count < 10
         else {
-            let alert = UIAlertController(title: "Ну нереально много", message: "Вы неплохо зарабатываете. Нажмите закрыть и попробуйте разбить доход", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Введено некоректное значение", message: " Нажмите закрыть и попробуйте указать другое значение", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
             self.present(alert, animated: true)
             profitTextField.text = ""

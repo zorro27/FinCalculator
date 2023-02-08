@@ -19,7 +19,7 @@ class ProfitController: UIViewController {
     var totalScore: Int = 0
     let settingButton = SettingsProfitButton()
     let settingLabel = SettingsLabel()
-    let balance = "Текущий баланс"
+    let balance = "Текущий баланс:"
     let nameButton = "Добавить доход"
     let startValue = "0 руб."
     
@@ -29,16 +29,15 @@ class ProfitController: UIViewController {
         self.profitTable.dataSource = self
         self.profitTable.delegate = self
         settingLabel.setting(label: balanceLabel, text: balance)
-        settingLabel.setting(label: valueLabel, text: startValue)
+        settingLabel.setting(label: valueLabel, text: sumValue(array: testTable))
         settingButton.setting(button: addProfitButton, setTitle: nameButton, backgtoundCollorButton: .blue, subTitle: nil, alfa: 0.8, cornerRadius: 12)
+        profitTable.backgroundColor = .clear
         pushButton()
-        sumValue()
-        if let array = UserDefaults.standard.array(forKey: "profit") as? [Int] {
-            testTable = array
+        //Необходимо передалать в отдельную функцию
+        if let value = UserDefaults.standard.array(forKey: "profit") as? [Int] {
+            testTable += value
+            valueLabel.text = sumValue(array: testTable)
         }
-        let size = CGSize(width: self.view.frame.width, height: self.view.frame.height)
-        print(size.height)
-        print (size.width)
     }
 }
 
@@ -49,9 +48,12 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.profitTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .clear
+        cell.textLabel?.font = UIFont(name: "Helvetica", size: 22)
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         let value = testTable[indexPath.row]
         let separatedNum = separatedNumber(value)
-        cell.textLabel?.text = separatedNum + ",00 руб"
+        cell.textLabel?.text = "+ " + separatedNum + ",00 руб"
         return cell
     }
     
@@ -63,22 +65,10 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "addProfitViewController") as? addProfitViewController else {return}
         if let sheet = vc.sheetPresentationController{
             sheet.detents = [.medium()]
-            sheet.preferredCornerRadius = 20
+            sheet.preferredCornerRadius = 30
         }
         vc.profitDelegate = self
         present(vc, animated: true)
-    }
-}
-
-extension ProfitController{
-    func sumValue() {
-        if testTable.isEmpty {
-            valueLabel.text = startValue
-        } else {
-            let sum = testTable.reduce(0, +)
-            let separateNum = separatedNumber(sum)
-            valueLabel.text = String(separateNum) + ",00 руб"
-        }
     }
 }
 
@@ -87,18 +77,7 @@ extension ProfitController: ProfitProtocol{
         testTable.append(profit)
         UserDefaults.standard.set(testTable, forKey: "profit")
         UserDefaults.standard.synchronize()
-        sumValue()
+        valueLabel.text = sumValue(array: testTable)
         profitTable.reloadData()
-        print(UserDefaults.standard.array(forKey: "profit"))
-    }
-}
-
-extension ProfitController {
-    func separatedNumber(_ number: Int) -> String {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            formatter.groupingSeparator = " "
-            let str = formatter.string(from: number as NSNumber)!
-        return String(str)
     }
 }
