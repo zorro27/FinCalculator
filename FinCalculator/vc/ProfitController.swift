@@ -23,7 +23,6 @@ class ProfitController: UIViewController {
     let nameButton = "Добавить доход"
     let startValue = "0 руб."
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profitTable.dataSource = self
