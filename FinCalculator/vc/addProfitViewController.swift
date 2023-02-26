@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProfitProtocol {
-    func add (profit: Int)
+    func add (profit: Int, date: String)
 }
 
 class addProfitViewController: UIViewController {
@@ -72,7 +72,7 @@ class addProfitViewController: UIViewController {
             return
         }
         if let numbersTF = Int(text) {
-            profitDelegate.add(profit: Int(numbersTF))
+            profitDelegate.add(profit: Int(numbersTF), date: createDate())
             profitTextField.text = ""
         }
     }

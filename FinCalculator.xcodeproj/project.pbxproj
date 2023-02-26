@@ -18,6 +18,7 @@
 		B18F9E9D28FB2A4900799A85 /* addProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */; };
 		B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F9E9E28FC588400799A85 /* SettingsButton.swift */; };
 		B1C2FB5C2992D16C00F701D7 /* assistantFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2FB5B2992D16C00F701D7 /* assistantFile.swift */; };
+		B1C2FB5E299576AC00F701D7 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2FB5D299576AC00F701D7 /* ChartViewController.swift */; };
 		B1DD950129059FC900A0BCAE /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD950029059FC900A0BCAE /* SettingsLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		B18F9E9C28FB2A4900799A85 /* addProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProfitViewController.swift; sourceTree = "<group>"; };
 		B18F9E9E28FC588400799A85 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		B1C2FB5B2992D16C00F701D7 /* assistantFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantFile.swift; sourceTree = "<group>"; };
+		B1C2FB5D299576AC00F701D7 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B1DD950029059FC900A0BCAE /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
 		B2321719962D4949A5E25E26 /* Pods-FinCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinCalculator.debug.xcconfig"; path = "Target Support Files/Pods-FinCalculator/Pods-FinCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 			children = (
 				B137E26228F7367B00564F1E /* AppDelegate.swift */,
 				B137E26428F7367B00564F1E /* SceneDelegate.swift */,
+				B1C2FB5D299576AC00F701D7 /* ChartViewController.swift */,
 				B1C2FB5A2991782200F701D7 /* vc */,
 				B1C2FB592991781100F701D7 /* view */,
 				B137E26B28F7367D00564F1E /* Assets.xcassets */,
@@ -243,6 +246,7 @@
 				B137E26728F7367B00564F1E /* ProfitController.swift in Sources */,
 				B18F9E9F28FC588400799A85 /* SettingsButton.swift in Sources */,
 				B1053FBF29772F0D00DCDDF2 /* CostViewController.swift in Sources */,
+				B1C2FB5E299576AC00F701D7 /* ChartViewController.swift in Sources */,
 				B137E26328F7367B00564F1E /* AppDelegate.swift in Sources */,
 				B137E26528F7367B00564F1E /* SceneDelegate.swift in Sources */,
 				B1DD950129059FC900A0BCAE /* SettingsLabel.swift in Sources */,

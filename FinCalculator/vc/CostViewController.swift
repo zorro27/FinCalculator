@@ -10,6 +10,7 @@ import SnapKit
 
 class CostViewController: UIViewController {
     var costArray:[Int] = []
+    var dateArray:[String] = []
     let table = UITableView()
     let button = UIButton(type: .system)
     let label = UILabel()
@@ -22,6 +23,15 @@ class CostViewController: UIViewController {
         settingTable()
         settingButton()
         tapButton()
+        
+        if let value = UserDefaults.standard.array(forKey: "cost") as? [Int] {
+            costArray += value
+            label.text = sumValue(array: costArray)
+        }
+        
+        if let value = UserDefaults.standard.array(forKey: "costDate") as? [String] {
+            dateArray += value
+        }
     }
 }
 
@@ -31,9 +41,11 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource, Profit
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Default")
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
+        cell.detailTextLabel?.text = dateArray[indexPath.row]
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 1
         let value = costArray[indexPath.row]
@@ -61,7 +73,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource, Profit
         }
         button.snp.makeConstraints { make in
             make.right.left.equalToSuperview().inset(60)
-            make.top.equalTo(table.snp.bottom).inset(20)
+            make.top.equalTo(table.snp.bottom).inset(-10)
             make.height.equalTo(40)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
@@ -98,8 +110,11 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource, Profit
         vc.profitDelegate = self
         present(vc, animated: true)
     }
-    func add(profit: Int) {
+    func add(profit: Int, date: String) {
         costArray.append(profit)
+        dateArray.append(date)
+        UserDefaults.standard.set(costArray, forKey: "cost")
+        UserDefaults.standard.set(dateArray, forKey: "costDate")
         label.text = "Сумма: " + sumValue(array: costArray)
         table.reloadData()
     }

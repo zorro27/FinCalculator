@@ -16,6 +16,7 @@ class ProfitController: UIViewController {
     @IBOutlet weak var addProfitButton: UIButton!
     
     var testTable: [Int] = []
+    var testDate: [String] = []
     var totalScore: Int = 0
     let settingButton = SettingsProfitButton()
     let settingLabel = SettingsLabel()
@@ -36,6 +37,9 @@ class ProfitController: UIViewController {
         if let value = UserDefaults.standard.array(forKey: "profit") as? [Int] {
             testTable += value
             valueLabel.text = sumValue(array: testTable)
+            if let value = UserDefaults.standard.array(forKey: "date") as? [String] {
+                testDate += value
+            }
         }
     }
 }
@@ -51,6 +55,7 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.font = UIFont(name: "Helvetica", size: 22)
         cell.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         let value = testTable[indexPath.row]
+        cell.detailTextLabel?.text = testDate[indexPath.row]
         let separatedNum = separatedNumber(value)
         cell.textLabel?.text = "+ " + separatedNum + ",00 руб"
         return cell
@@ -72,9 +77,12 @@ extension ProfitController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ProfitController: ProfitProtocol{
-    func add(profit: Int) {
+
+    func add(profit: Int, date: String) {
         testTable.append(profit)
+        testDate.append(date)
         UserDefaults.standard.set(testTable, forKey: "profit")
+        UserDefaults.standard.set(testDate, forKey: "date")
         UserDefaults.standard.synchronize()
         valueLabel.text = sumValue(array: testTable)
         profitTable.reloadData()

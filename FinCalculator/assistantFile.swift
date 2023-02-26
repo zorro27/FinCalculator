@@ -31,3 +31,11 @@ func sumValue(array: [Int]) -> String {
         let separateNum = separatedNumber(sum)
         return String(separateNum) + ",00 руб"
 }
+
+func createDate()->(String) {
+    var date = NSDate()
+    var formatter = DateFormatter()
+    formatter.dateFormat = "dd.MM.YYYY"
+    var formatteddate = formatter.string(from: date as Date)
+    return formatteddate
+}
